@@ -51,7 +51,8 @@
         <!-- относительная ссылка на страницу двумя уровнями выше -->
         <li><a href=".html" title="Главная страница">Относительная ссылка на страницу двумя уровнями выше</a></li>
     </ul>
-
+    
+    <!-- контекстная ссылка в тексте абзаца --> 
     <ul>
         <p>
         Фкультет компьютерных технологий и прикладной математики (ФКТиПМ) КубГУ –
@@ -62,18 +63,16 @@
     </ul>
 
     <ul>
-        <!-- 13) Контекстная ссылка в тексте абзаца -->
-        <li>Посетите <a href="https://www.kubsu.ru" target="_blank" title="Официальный сайт КубГУ">официальный сайт КубГУ</a> для получения дополнительной информации.</li>
-
-        <!-- 14) Ссылка на фрагмент страницы стороннего сайта -->
-        <li><a href="https://www.kubsu.ru#block-portal-kubsu-main-menu" target="_blank" title="Меню КубГУ">Меню на сайте КубГУ</a></li>
+        <!-- ссылка на фрагмент страницы стороннего сайта -->
+        <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B5%D0%B9%D0%BD,_%D0%9A%D1%83%D1%80%D1%82" target="_blank" title="Инофрмация">Ссылка на фрагмент страницы стороннего сайта</a></li>
 
         <!-- 15) Ссылки из прямоугольных и круглых областей картинки (HTML-тег map) -->
         <li>
-            <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png" alt="Логотип КубГУ" usemap="#image-map" width="100">
-            <map name="image-map">
-                <area shape="rect" coords="0,0,50,50" href="https://www.kubsu.ru" target="_blank" alt="Прямоугольная область" title="КубГУ">
-                <area shape="circle" coords="75,25,25" href="https://www.kubsu.ru/ru/about" target="_blank" alt="Круглая область" title="О КубГУ">
+            ссылки из прямоугольных и круглых областей картинки (map):<br>
+            <img src="map.svg" alt="карта изображения" width="320" height="160" usemap="#m">
+            <map name="m">
+                <area shape="rect" coords="20,20,140,80" href="https://kubsu.ru" alt="Переход на kubsu.ru">
+                <area shape="circle" coords="230,80,36" href="https://github.com" alt="Переход на GitHub">
             </map>
         </li>
 
