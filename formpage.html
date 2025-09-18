@@ -1,0 +1,105 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма КубГУ</title>
+</head>
+<body>
+    <h1>Форма</h1>
+    <p>Заполните форму ниже:</p>
+
+    <form action="https://formspree.io/f/mayknzjw" method="POST">
+        <!-- 1) ФИО -->
+        <label for="fname">ФИО:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Введите ваше ФИО" required><br><br>
+
+        <!-- 2) Телефон -->
+        <label for="phone">Номер телефона:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="+7 777-777-77-77" pattern="\+7 \d{3}-\d{3}-\d{2}-\d{2}" required><br><br>
+
+        <!-- 3) E-mail -->
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="Введите ваш E-mail" required><br><br>
+
+        <!-- 4) Дата рождения -->
+        <label for="birthday">День рождения:</label><br>
+        <input type="date" id="birthday" name="birthday" required><br><br>
+
+        <!-- 5) Пол -->
+        <p>Пол:</p>
+        <input type="radio" id="male" name="sex" value="Мужской" required>
+        <label for="male">Мужской</label><br>
+        <input type="radio" id="female" name="sex" value="Женский">
+        <label for="female">Женский</label><br><br>
+
+        <!-- 6) Любимый язык программирования -->
+        <label for="programming_languages">Выберите любимый язык программирования:</label><br>
+        <select id="programming_languages" name="programming_language" multiple required>
+            <option value="pascal">Pascal</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="javascript">JavaScript</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="haskell">Haskell</option>
+            <option value="clojure">Clojure</option>
+            <option value="prolog">Prolog</option>
+            <option value="scala">Scala</option>
+        </select><br><br>
+
+        <!-- 7) Биография -->
+        <label for="biography">Расскажите о себе:</label><br>
+        <textarea id="biography" name="biography" rows="4" cols="50" placeholder="Расскажите о себе..."></textarea><br><br>
+
+        <!-- 8) С контрактом ознакомлен -->
+        <input type="checkbox" id="contract" name="contract" required>
+        <label for="contract">С контрактом ознакомлен(а)</label><br><br>
+
+        <!-- 9) Кнопка "Сохранить" -->
+        <input type="submit" value="Сохранить">
+    </form>
+
+    <p><a href="index.html" title="Вернуться на главную">Вернуться на главную</a></p>
+</body>
+</html>
