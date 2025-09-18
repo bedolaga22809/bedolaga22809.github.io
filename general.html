@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости КубГУ</title>
+</head>
+<body>
+    <h1>Путеводитель КубГУ</h1>
+    <p>На этом сайте, вы найдете все полезные страницы КубГУ. </p>
+
+    <h2>Список гиперссылок</h2>
+    <ul>
+        <!-- абсолютная гиперссылка на на главную Кубгу (http)-->
+        <li><a href="http://www.kubsu.ru" target="_blank" title="Главная страница КубГУ (HTTP)">КубГУ (http)</a></li>
+
+        <!-- абсолютная гиперссылка на главную страницу сайта КубГУ (https) -->
+        <li><a href="https://www.kubsu.ru" target="_blank" title="Главная страница КубГУ (HTTPS)">КубГУ (https)</a></li>
+
+        <!-- ссылка-изображение -->
+        <li>
+            <a href="https://www.kubsu.ru" target="_blank" title="Логотип КубГУ">
+                <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png" alt="Логотип КубГУ" width="100">
+            </a>
+        </li>
+
+        <!-- 4) Сокращенная ссылка на внутреннюю страницу -->
+        <li><a href="about.html" title="О нас">О нас</a></li>
+
+        <!-- 5) Сокращенная ссылка на главную страницу -->
+        <li><a href="/" title="Главная страница">Главная</a></li>
+
+        <!-- 6) Ссылка на страницу с формой -->
+        <li><a href="form.html" title="Перейти к форме">Перейти к форме</a></li>
+
+        <!-- 7) Ссылка с тремя параметрами в URL -->
+        <li><a href="search.html?query=html&category=web&sort=desc" title="Поиск по HTML">Поиск по HTML</a></li>
+
+        <!-- 8) Ссылка с параметром id в URL -->
+        <li><a href="profile.html?id=123" title="Профиль пользователя 123">Профиль пользователя 123</a></li>
+
+        <!-- 9) Относительная ссылка на страницу в текущем каталоге -->
+        <li><a href="./news.html" title="Новости">Новости</a></li>
+
+        <!-- 10) Относительная ссылка на страницу в каталоге about -->
+        <li><a href="about/about-us.html" title="О нас">О нас</a></li>
+
+        <!-- 11) Относительная ссылка на страницу в каталоге уровнем выше -->
+        <li><a href="../contacts.html" title="Контакты">Контакты</a></li>
+
+        <!-- 12) Относительная ссылка на страницу двумя уровнями выше -->
+        <li><a href="../../home.html" title="Главная страница">Главная</a></li>
+
+        <!-- 13) Контекстная ссылка в тексте абзаца -->
+        <li>Посетите <a href="https://www.kubsu.ru" target="_blank" title="Официальный сайт КубГУ">официальный сайт КубГУ</a> для получения дополнительной информации.</li>
+
+        <!-- 14) Ссылка на фрагмент страницы стороннего сайта -->
+        <li><a href="https://www.kubsu.ru#block-portal-kubsu-main-menu" target="_blank" title="Меню КубГУ">Меню на сайте КубГУ</a></li>
+
+        <!-- 15) Ссылки из прямоугольных и круглых областей картинки (HTML-тег map) -->
+        <li>
+            <img src="https://www.kubsu.ru/sites/all/themes/portal_kubsu/logo.png" alt="Логотип КубГУ" usemap="#image-map" width="100">
+            <map name="image-map">
+                <area shape="rect" coords="0,0,50,50" href="https://www.kubsu.ru" target="_blank" alt="Прямоугольная область" title="КубГУ">
+                <area shape="circle" coords="75,25,25" href="https://www.kubsu.ru/ru/about" target="_blank" alt="Круглая область" title="О КубГУ">
+            </map>
+        </li>
+
+        <!-- 16) Ссылка с пустым href -->
+        <li><a href="" title="Пустая ссылка">Пустая ссылка</a></li>
+
+        <!-- 17) Ссылка без href -->
+        <li><a title="Ссылка без href">Ссылка без href</a></li>
+
+        <!-- 18) Ссылка, по которой запрещен переход поисковикам -->
+        <li><a href="private.html" rel="nofollow" title="Запрещено для поисковиков">Приватная страница</a></li>
+
+        <!-- 19) Запрещенная для индексации поисковиками -->
+        <li><a href="noindex.html" rel="noindex" title="Не индексировать">Не индексируемая страница</a></li>
+
+        <!-- 20) Нумерованный список ссылок с подписями title -->
+        <ol>
+            <li><a href="https://www.kubsu.ru" target="_blank" title="Главная страница КубГУ">КубГУ</a></li>
+            <li><a href="https://www.kubsu.ru/ru/about" target="_blank" title="О КубГУ">О КубГУ</a></li>
+            <li><a href="https://www.kubsu.ru/ru/contacts" target="_blank" title="Контакты КубГУ">Контакты</a></li>
+        </ol>
+
+        <!-- 21) Ссылка на файл на сервере FTP с авторизацией -->
+        <li><a href="ftp://user:password@ftp.example.com/file.txt" title="Файл на FTP">Файл на FTP</a></li>
+    </ul>
+</body>
+</html>
