@@ -10,19 +10,67 @@
     <header id="header">
         <div class="container">
             <img src="img/whitelogo.png" alt="Логотип КубГУ" class="logo">
-            <div class="site-name" style="color: white;">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
-            <ul>
-                <li><a href="#list">ГЛАВНАЯ</a></li>
-                <li><a href="#list">ССЫЛКИ</a></li>
-                <li><a href="#table">ТАБЛИЦА</a></li>
-                <li><a href="#form">ФОРМА</a></li>
-            </ul>
+            <div class="site-name">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#list">ГЛАВНАЯ</a></li>
+                    <li><a href="#list">ССЫЛКИ</a></li>
+                    <li><a href="#table">ТАБЛИЦА</a></li>
+                    <li><a href="#form">ФОРМА</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main class="container">
         <h1>Путеводитель КубГУ</h1>
         <p>На этом сайте, вы найдете все полезные страницы КубГУ.</p>
+
+        <section id="table">
+            <h2>Информация о КубГУ</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Факультет</th>
+                        <th>Год основания</th>
+                        <th>Количество студентов</th>
+                        <th>Основные направления</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ФКТиПМ</td>
+                        <td>1970</td>
+                        <td>1200</td>
+                        <td>Прикладная математика, информатика</td>
+                    </tr>
+                    <tr>
+                        <td>ФИСМО</td>
+                        <td>1920</td>
+                        <td>800</td>
+                        <td>Русский язык, литература</td>
+                    </tr>
+                    <tr>
+                        <td>Юридический факультет</td>
+                        <td>1993</td>
+                        <td>1500</td>
+                        <td>Гражданское право, уголовное право</td>
+                    </tr>
+                    <tr>
+                        <td>Факультет биологии</td>
+                        <td>1970</td>
+                        <td>600</td>
+                        <td>Биотехнология, экология</td>
+                    </tr>
+                    <tr>
+                        <td>Экономический факультет</td>
+                        <td>1970</td>
+                        <td>2000</td>
+                        <td>Финансы, менеджмент</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section id="list">
             <h2>Список гиперссылок</h2>
@@ -108,52 +156,6 @@
             <!-- cсылка на файл на сервере FTP с авторизацией -->
             <li><a href="ftp://user:password@ftp.example.com/file.txt" title="Файл на FTP">Файл на FTP</a></li>
         </ul>
-        </section>
-
-        <section id="table">
-            <h2>Информация о КубГУ</h2>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Факультет</th>
-                        <th>Год основания</th>
-                        <th>Количество студентов</th>
-                        <th>Основные направления</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ФКТиПМ</td>
-                        <td>1970</td>
-                        <td>1200</td>
-                        <td>Прикладная математика, информатика</td>
-                    </tr>
-                    <tr>
-                        <td>ФИСМО</td>
-                        <td>1920</td>
-                        <td>800</td>
-                        <td>Русский язык, литература</td>
-                    </tr>
-                    <tr>
-                        <td>Юридический факультет</td>
-                        <td>1993</td>
-                        <td>1500</td>
-                        <td>Гражданское право, уголовное право</td>
-                    </tr>
-                    <tr>
-                        <td>Факультет биологии</td>
-                        <td>1970</td>
-                        <td>600</td>
-                        <td>Биотехнология, экология</td>
-                    </tr>
-                    <tr>
-                        <td>Экономический факультет</td>
-                        <td>1970</td>
-                        <td>2000</td>
-                        <td>Финансы, менеджмент</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
         <section id="form">
