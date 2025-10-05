@@ -1,262 +1,151 @@
-/* Mobile First стили */
+/* Mobile First стили с Bootstrap */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.6;
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
+/* стили соцсетей */
+.social-btn {
+    width: 100px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-#header {
-    background-color: darkblue;
-    width: 100%;
-    box-sizing: border-box;
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-#header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* кастомизация bootstrap компонентов  */
+.card {
+    border: none;
+    border-radius: 10px;
 }
 
-.logo {
-    margin-bottom: 10px;
-    font-weight: bold;
+.card-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.list-group-item {
+    border: 1px solid rgba(0,0,0,.125);
+    margin-bottom: 2px;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;
+}
+
+/* адаптация таблицы */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+    font-weight: 500;
+}
+
+/* стили формы */
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+/* адаптивные стили для навигации */
+#nav .nav-link {
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+#nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* улучшения для мобильных устройств */
+@media (max-width: 767.98px) {
+    .site-name {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 14px;
+    }
+}
+
+/* стили для десктопа */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .card {
+        margin-bottom: 0;
+    }
+    
+    .row {
+        gap: 20px;
+    }
+    
+    #table, #list, #form {
+        margin-bottom: 0;
+    }
+}
+
+/* алавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* кастомизация хедера и футера */
+#header, #footer {
+    background: linear-gradient(135deg,darkblue 0%, #0a58ca 100%);
 }
 
 .site-name {
-    font-size: 1.2em;
-    color: white;
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-#nav {
-    width: 100%;
-}
-
-#nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#nav li {
-    margin: 5px 0;
-    text-align: center;
-}
-
-#nav a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#header a:link, #header a:visited, #header a:hover, #header a:active,
-#nav a:link, #nav a:visited, #nav a:hover, #nav a:active {
-    color: white;
-}
-
-main {
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-}
-
-#table {
-    order: 1;
-    margin-bottom: 20px;
-    background-color: #e6e6e6;
-    padding: 15px; 
-    border-radius: 8px; 
-}
-
-#list {
-    order: 2;
-    margin-bottom: 20px;
-    background-color: #e6e6e6;
-    padding: 15px; 
-    border-radius: 8px; 
-}
-
-#form {
-    order: 3;
-    margin-bottom: 20px;
-    background-color: #e6e6e6;
-    padding: 15px; 
-    border-radius: 8px; 
-}
-
-#list a, #table a, #form a {
-    text-decoration: none;
-    color: black;
-}
-
-#list a:link, #list a:visited, #list a:hover, #list a:active,
-#table a:link, #table a:visited, #table a:hover, #table a:active,
-#form a:link, #form a:visited, #form a:hover, #form a:active {
-    color: black;
-}
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow-x: auto;
-    display: block;
-}
-
-.data-table th, .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.data-table th {
-    background-color: #f2f2f2;
-}
-
-.data-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.data-table tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%; 
-}
-
-form label {
-    margin-bottom: 8px;
-    font-weight: bold; 
-    color: #333;
-}
-
-form input, form select, form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px; 
-    font-size: 1em;
-    box-sizing: border-box; 
-    width: 100%; 
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
-}
-
-form input[type="radio"] {
-    width: auto; 
-    margin-right: 10px;
-}
-
-form .radio-group {
-    display: flex;
-    align-items: center;
-    gap: 20px; 
-    margin-bottom: 15px;
-}
-
-form input[type="submit"] {
-    background-color: darkblue; 
-    color: white; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s; 
-}
-
-form input[type="submit"]:hover {
-    background-color: #002a5c;
-}
-
-form button {
-    padding: 5px 10px;
-}
-
-#footer {
-    background-color: darkblue;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    color: white;
-    box-sizing: border-box;
-}
-
-/* Планшеты и десктопы */
-@media (min-width: 768px) {
-    .container {
-        max-width: 960px;
-        padding: 10px;
-    }
-    
-    #header .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logo {
-        margin-right: 20px;
-        margin-bottom: 0;
-    }
-    
-    .site-name {
-        font-size: 1.5em;
-        text-align: left;
-        margin-bottom: 0;
-        flex-grow: 1;
-    }
-    
-    #nav {
-        width: auto;
-    }
-    
-    #nav ul {
-        flex-direction: row;
-        width: auto;
-    }
-    
-    #nav li {
-        margin: 0 10px;
-    }
-    
-    #nav a {
-        padding: 8px 15px;
-        width: auto;
-    }
-    
-    main {
-        flex-direction: column;
-    }
-    
-    #table {
-        order: 2;
-    }
-    
-    #list {
-        order: 1;
-    }
-    
-    #form {
-        order: 3;
-    }
-    
-    .data-table {
-        display: table;
-    }
+.logo {
+    height: 40px;
+    width: auto;
 }
