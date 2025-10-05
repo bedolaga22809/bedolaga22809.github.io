@@ -4,232 +4,336 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости КубГУ</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header id="header">
+    <header id="header" class="bg-primary text-white">
         <div class="container">
-            <img src="img/whitelogo.png" alt="Логотип КубГУ" class="logo">
-            <div class="site-name">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#list">ГЛАВНАЯ</a></li>
-                    <li><a href="#list">ССЫЛКИ</a></li>
-                    <li><a href="#table">ТАБЛИЦА</a></li>
-                    <li><a href="#form">ФОРМА</a></li>
-                </ul>
-            </nav>
+            <!-- десктоп: -->
+            <div class="d-none d-md-flex align-items-center justify-content-between py-2">
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-white" href="#list">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#list">ССЫЛКИ</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <img src="img/whitelogo.png" alt="Логотип КубГУ" class="logo me-2" style="height: 40px;">
+                    <div class="site-name fw-bold" style="white-space: nowrap; font-size: 14px;">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
+                </div>
+                
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-white" href="#table">ТАБЛИЦА</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#form">ФОРМА</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- мобильная: -->
+            <div class="d-md-none py-2">
+
+                <div class="d-flex flex-column align-items-center mb-2">
+                    <img src="img/whitelogo.png" alt="Логотип КубГУ" class="logo mb-1" style="height: 40px;">
+                    <div class="site-name fw-bold text-center" style="white-space: nowrap; font-size: 14px;">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
+                </div>
+                
+                <nav id="nav">
+                    <ul class="nav flex-column justify-content-center">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-white text-center" href="#list">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-white text-center" href="#list">ССЫЛКИ</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-white text-center" href="#table">ТАБЛИЦА</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-center" href="#form">ФОРМА</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h1>Путеводитель КубГУ</h1>
-        <p>На этом сайте, вы найдете все полезные страницы КубГУ.</p>
+    <main class="container my-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-6 fw-bold">Путеводитель КубГУ</h1>
+                <p class="lead">На этом сайте, вы найдете все полезные страницы КубГУ.</p>
+            </div>
+        </div>
 
-        <section id="table">
-            <h2>Информация о КубГУ</h2>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Факультет</th>
-                        <th>Год основания</th>
-                        <th>Количество студентов</th>
-                        <th>Основные направления</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ФКТиПМ</td>
-                        <td>1970</td>
-                        <td>1200</td>
-                        <td>Прикладная математика, информатика</td>
-                    </tr>
-                    <tr>
-                        <td>ФИСМО</td>
-                        <td>1920</td>
-                        <td>800</td>
-                        <td>Русский язык, литература</td>
-                    </tr>
-                    <tr>
-                        <td>Юридический факультет</td>
-                        <td>1993</td>
-                        <td>1500</td>
-                        <td>Гражданское право, уголовное право</td>
-                    </tr>
-                    <tr>
-                        <td>Факультет биологии</td>
-                        <td>1970</td>
-                        <td>600</td>
-                        <td>Биотехнология, экология</td>
-                    </tr>
-                    <tr>
-                        <td>Экономический факультет</td>
-                        <td>1970</td>
-                        <td>2000</td>
-                        <td>Финансы, менеджмент</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="list">
-            <h2>Список гиперссылок</h2>
-            <ul>
-                <!-- aбсолютная гиперссылка на на главную Кубгу (http)-->
-                <li><a href="http://www.kubsu.ru" target="_blank" title="Главная страница КубГУ (в http)">Абсолютная гиперссылка на главную страницу сайта КубГУ (http)</a></li>
-
-                <!-- абсолютная гиперссылка на главную страницу сайта КубГУ (https) -->
-                <li><a href="https://www.kubsu.ru" target="_blank" title="Главная страница КубГУ (в https)">Абсолютная гиперссылка на главную страницу сайта КубГУ (https)</a></li>
-
-                <!-- ссылка-изображение -->
-                <li>
-                    <a href="https://www.kubsu.ru" target="_blank" title="Логотип Кубгу">
-                        <img src="https://upload.wikimedia.org/wikipedia/ru/a/a2/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%9A%D1%83%D0%B1%D0%93%D0%A3.png" alt="Логотип КубГУ" width="150">
-                    </a>
-                </li>
-
-                <!-- сокращенная ссылка на внутреннюю страницу -->
-                <li><a href="about.html" title="О нас">Сокращенная ссылка на внутреннюю страницу</a></li>
-
-                <!-- cокращенная ссылка на главную страницу -->
-                <li><a href="/" title="Главная страница">Сокращенная ссылка на главную страницу</a></li>
-
-                <!-- cсылка на фрагмент текущей страницы -->
-                <li><a href="#news-section" title="Перейти к разделу новостей">Ссылка на фрагмент текущей страницы</a></li>
-
-                <!-- ссылка с тремя параметрами в URL -->
-                <li><a href="https://www.google.com/search?q=КубГУ&num=1&hl=ru" title="Поиск по HTML">Ссылка с тремя параметрами в URL</a></li>
-
-                <!-- ссылка с параметром id в URL -->
-                <li><a href="https://www.kubsu.ru/ru/user/74388" title="Профиль создателя">Ссылка с параметром id в URL</a></li>
-
-                <!-- относительная ссылка на страницу в текущем каталоге -->
-                <li><a href="news.html" title="Новости">Относительная ссылка на страницу в текущем каталоге</a></li>
-
-                <!-- относительная ссылка на страницу в каталоге about -->
-                <li><a href="about/about.html" title="О нас">Относительная ссылка на страницу в каталоге about</a></li>
-
-                <!-- Относительная ссылка на страницу в каталоге уровнем выше -->
-                <li><a href="../contact.html" title="Контакты">Относительная ссылка на страницу в каталоге уровнем выше</a></li>
-
-                <!-- Относительная ссылка на страницу двумя уровнями выше -->
-                <li><a href="../../index.html" title="Главная страница">Относительная ссылка на страницу двумя уровнями выше</a></li>
-            </ul>
-
-            <!-- контекстная ссылка в тексте абзаца -->
-            <p>
-                Фкультет компьютерных технологий и прикладной математики (ФКТиПМ) КубГУ –
-                ведущий образовательный центр Южного федерального округа по подготовке специалистов по прикладной и вычислительной математике,
-                фундаментальной информатике и программированию. На факультете обучаются более 1200 студентов. Подробнее можете ознакомиться с сайтом факультета по ссылке:
-                <a href="https://kubsu.ru/ru/fktipm?ysclid=mfpsb6t8g6113087015" target="_blank">ФКТиПМ</a>.
-            </p>
-
-            <ul>
-            <!-- ссылка на фрагмент страницы стороннего сайта -->
-            <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B5%D0%B9%D0%BD,_%D0%9A%D1%83%D1%80%D1%82" target="_blank" title="Информация">Ссылка на фрагмент страницы стороннего сайта</a></li>
-
-            <!-- Ссылки из прямоугольных и круглых областей картинки (HTML-тег map) -->
-            <li>
-                Ссылки из прямоугольных и круглых областей картинки (map): (не готово) <br>
-            </li>
-
-            <!-- ссылка с пустым href -->
-            <li><a href="" onclick="window.location='https://kubsu.ru'">Cсылка с пустым href</a></li>
-
-            <!-- cсылка без href -->
-            <li><a onclick="window.location='https://kubsu.ru'">Ссылка без href</a></li>
-
-            <!-- ссылка, по которой запрещен переход поисковикам -->
-            <li><a href="https://kubsu.ru/" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
-
-            <!-- запрещенная для индексации поисковиками -->
-            <li><a href="https://kubsu.ru/hidden/secret-page.html" rel="noindex" title="Не индексировать">Запрещенная для индексации поисковиками</a></li>
-
-            <!-- нумерованный список ссылок с подписями title -->
-            Соц.сети Кубанского Государственного Университета:
-            <ol>
-                <li><a href="https://t.me/kubsunews" target="_blank" title="ТГ">Телеграм</a></li>
-                <li><a href="https://vk.com/kubsu_official" target="_blank" title="ВК">ВКонтакте</a></li>
-                <li><a href="https://ok.ru/group/70000000410417" target="_blank" title="Одноклассники">Одноклассники</a></li>
-            </ol>
-
-            <!-- cсылка на файл на сервере FTP с авторизацией -->
-            <li><a href="ftp://user:password@ftp.example.com/file.txt" title="Файл на FTP">Файл на FTP</a></li>
-        </ul>
-        </section>
-
-        <section id="form">
-            <h2>Форма</h2>
-            <p>Заполните форму ниже:</p>
-            <form action="https://formspree.io/f/mayknzjw" method="POST">
-                <!-- 1) ФИО -->
-               
-                <label for="fname">ФИО:</label>
-                <input type="text" id="fname" name="fname" placeholder="Введите ваше ФИО" required>
-
-                <!-- 2) Телефон -->
-               
-                <label for="phone">Номер телефона:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+7 777-777-77-77" pattern="\+7 \d{3}-\d{3}-\d{2}-\d{2}" required>
-
-                <!-- 3) E-mail -->
-               
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Введите ваш E-mail" required>
-
-                <!-- 4) Дата рождения -->
-               
-                <label for="birthday">День рождения:</label>
-                <input type="date" id="birthday" name="birthday" required>
-
-                <!-- 5) Пол -->
-                
-                <label>Пол:</label>
-                <div class="radio-group">
-                    <input type="radio" id="male" name="sex" value="Мужской" required>
-                    <label for="male">Мужской</label>
-                    <input type="radio" id="female" name="sex" value="Женский">
-                    <label for="female">Женский</label>
+        <!-- с применением mobile first -->
+        <div class="row">
+            <section id="table" class="col-12 order-1 order-md-2 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-3">Информация о КубГУ</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Факультет</th>
+                                        <th>Год основания</th>
+                                        <th>Количество студентов</th>
+                                        <th>Основные направления</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ФКТиПМ</td>
+                                        <td>1970</td>
+                                        <td>1200</td>
+                                        <td>Прикладная математика, информатика</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ФИСМО</td>
+                                        <td>1920</td>
+                                        <td>800</td>
+                                        <td>Русский язык, литература</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Юридический факультет</td>
+                                        <td>1993</td>
+                                        <td>1500</td>
+                                        <td>Гражданское право, уголовное право</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Факультет биологии</td>
+                                        <td>1970</td>
+                                        <td>600</td>
+                                        <td>Биотехнология, экология</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Экономический факультет</td>
+                                        <td>1970</td>
+                                        <td>2000</td>
+                                        <td>Финансы, менеджмент</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <!-- 6) Любимый язык программирования -->
-                
-                <label for="programming_languages">Выберите любимый язык программирования:</label>
-                <select id="programming_languages" name="programming_language" multiple required>
-                    <option value="pascal">Pascal</option>
-                    <option value="c">C</option>
-                    <option value="cpp">C++</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="php">PHP</option>
-                    <option value="python">Python</option>
-                    <option value="java">Java</option>
-                    <option value="haskell">Haskell</option>
-                    <option value="clojure">Clojure</option>
-                    <option value="prolog">Prolog</option>
-                    <option value="scala">Scala</option>
-                </select>
+            <section id="list" class="col-12 order-2 order-md-1 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-3">Список гиперссылок</h2>
+                        
+                        <div class="list-group mb-3">
 
-                <!-- 7) Биография -->
+                            <a href="http://www.kubsu.ru" class="list-group-item list-group-item-action" target="_blank" title="Главная страница КубГУ (в http)">
+                                Абсолютная гиперссылка на главную страницу сайта КубГУ (http)
+                            </a>
+                            <a href="https://www.kubsu.ru" class="list-group-item list-group-item-action" target="_blank" title="Главная страница КубГУ (в https)">
+                                Абсолютная гиперссылка на главную страницу сайта КубГУ (https)
+                            </a>
+                            
+                            <div class="list-group-item">
+                                <a href="https://www.kubsu.ru" target="_blank" title="Логотип Кубгу">
+                                    <img src="https://upload.wikimedia.org/wikipedia/ru/a/a2/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%9A%D1%83%D0%B1%D0%93%D0%A3.png" alt="Логотип КубГУ" class="img-fluid" style="max-height: 100px;">
+                                </a>
+                            </div>
 
-                <label for="biography">Расскажите о себе:</label>
-                <textarea id="biography" name="biography" rows="4" cols="50" placeholder="Расскажите о себе..."></textarea>
+                            <a href="about.html" class="list-group-item list-group-item-action" title="О нас">
+                                Сокращенная ссылка на внутреннюю страницу
+                            </a>
+                            <a href="/" class="list-group-item list-group-item-action" title="Главная страница">
+                                Сокращенная ссылка на главную страницу
+                            </a>
+                            <a href="#news-section" class="list-group-item list-group-item-action" title="Перейти к разделу новостей">
+                                Ссылка на фрагмент текущей страницы
+                            </a>
+                            
+                            <a href="https://www.google.com/search?q=КубГУ&num=1&hl=ru" class="list-group-item list-group-item-action" title="Поиск по HTML">
+                                Ссылка с тремя параметрами в URL
+                            </a>
+                            <a href="https://www.kubsu.ru/ru/user/74388" class="list-group-item list-group-item-action" title="Профиль создателя">
+                                Ссылка с параметром id в URL
+                            </a>
+                            
+                            <a href="news.html" class="list-group-item list-group-item-action" title="Новости">
+                                Относительная ссылка на страницу в текущем каталоге
+                            </a>
+                            <a href="about/about.html" class="list-group-item list-group-item-action" title="О нас">
+                                Относительная ссылка на страницу в каталоге about
+                            </a>
+                            <a href="../contact.html" class="list-group-item list-group-item-action" title="Контакты">
+                                Относительная ссылка на страницу в каталоге уровнем выше
+                            </a>
+                            <a href="../../index.html" class="list-group-item list-group-item-action" title="Главная страница">
+                                Относительная ссылка на страницу двумя уровнями выше
+                            </a>
+                        </div>
 
-                <!-- 8) С контрактом ознакомлен -->
-                <label for="contract">С контрактом ознакомлен(а)</label><input type="checkbox" id="contract" name="contract" required>
+                        <div class="mb-3">
+                            <p class="mb-2">
+                                Фкультет компьютерных технологий и прикладной математики (ФКТиПМ) КубГУ –
+                                ведущий образовательный центр Южного федерального округа по подготовке специалистов по прикладной и вычислительной математике,
+                                фундаментальной информатике и программированию. На факультете обучаются более 1200 студентов. Подробнее можете ознакомиться с сайтом факультета по ссылке:
+                                <a href="https://kubsu.ru/ru/fktipm?ysclid=mfpsb6t8g6113087015" target="_blank" class="fw-bold">ФКТиПМ</a>.
+                            </p>
+                        </div>
 
-                <!-- 9) Кнопка "Сохранить" -->
+                        <div class="list-group mb-3">
+                            <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B5%D0%B9%D0%BD,_%D0%9A%D1%83%D1%80%D1%82" class="list-group-item list-group-item-action" target="_blank" title="Информация">
+                                Ссылка на фрагмент страницы стороннего сайта
+                            </a>
+                            
+                            <a href="" class="list-group-item list-group-item-action" onclick="window.location='https://kubsu.ru'; return false;">
+                                Cсылка с пустым href
+                            </a>
+                            <a class="list-group-item list-group-item-action" onclick="window.location='https://kubsu.ru'; return false;">
+                                Ссылка без href
+                            </a>
+                            <a href="https://kubsu.ru/" class="list-group-item list-group-item-action" rel="nofollow">
+                                Ссылка, по которой запрещен переход поисковикам
+                            </a>
+                            <a href="https://kubsu.ru/hidden/secret-page.html" class="list-group-item list-group-item-action" rel="noindex" title="Не индексировать">
+                                Запрещенная для индексации поисковиками
+                            </a>
 
-                
-                <input type="submit" value="Сохранить">
-            </form>
-        </section>
+                            <a href="ftp://user:password@ftp.example.com/file.txt" class="list-group-item list-group-item-action" title="Файл на FTP">
+                                Файл на FTP
+                            </a>
+                        </div>
 
+                        <!-- соцсети с font awesome -->
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-3">Соц.сети Кубанского Государственного Университета:</h5>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
 
+                                <a href="https://t.me/kubsunews" target="_blank" class="btn btn-outline-primary d-flex flex-column align-items-center p-3 social-btn" title="Телеграм">
+                                    <i class="fab fa-telegram fa-2x mb-2"></i>
+                                    <span class="small">Телеграм</span>
+                                </a>
+
+                                <a href="https://vk.com/kubsu_official" target="_blank" class="btn btn-outline-primary d-flex flex-column align-items-center p-3 social-btn" title="ВКонтакте">
+                                    <i class="fab fa-vk fa-2x mb-2"></i>
+                                    <span class="small">ВКонтакте</span>
+                                </a>
+
+                                <a href="https://ok.ru/group/70000000410417" target="_blank" class="btn btn-outline-primary d-flex flex-column align-items-center p-3 social-btn" title="Одноклассники">
+                                    <i class="fab fa-odnoklassniki fa-2x mb-2"></i>
+                                    <span class="small">Одноклассники</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- форма -->
+            <section id="form" class="col-12 order-3 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-3">Форма</h2>
+                        <p class="mb-3">Заполните форму ниже:</p>
+                        
+                        <form action="https://formspree.io/f/mayknzjw" method="POST" class="row g-3">
+
+                            <div class="col-12">
+                                <label for="fname" class="form-label">ФИО:</label>
+                                <input type="text" class="form-control" id="fname" name="fname" placeholder="Введите ваше ФИО" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="phone" class="form-label">Номер телефона:</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 777-777-77-77" pattern="\+7 \d{3}-\d{3}-\d{2}-\d{2}" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Введите ваш E-mail" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="birthday" class="form-label">День рождения:</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Пол:</label>
+                                <div class="d-flex gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="male" name="sex" value="Мужской" required>
+                                        <label class="form-check-label" for="male">Мужской</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="female" name="sex" value="Женский">
+                                        <label class="form-check-label" for="female">Женский</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="programming_languages" class="form-label">Выберите любимый язык программирования:</label>
+                                <select class="form-select" id="programming_languages" name="programming_language" multiple required>
+                                    <option value="pascal">Pascal</option>
+                                    <option value="c">C</option>
+                                    <option value="cpp">C++</option>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="php">PHP</option>
+                                    <option value="python">Python</option>
+                                    <option value="java">Java</option>
+                                    <option value="haskell">Haskell</option>
+                                    <option value="clojure">Clojure</option>
+                                    <option value="prolog">Prolog</option>
+                                    <option value="scala">Scala</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="biography" class="form-label">Расскажите о себе:</label>
+                                <textarea class="form-control" id="biography" name="biography" rows="4" placeholder="Расскажите о себе..."></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="contract" name="contract" required>
+                                    <label class="form-check-label" for="contract">С контрактом ознакомлен(а)</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <footer id="footer">
+
+    <!-- footer -->
+    <footer id="footer" class="bg-primary text-white py-3 mt-4">
         <div class="container">
-            (c) Малик Эбзеев
+            <div class="row">
+                <div class="col-12 text-center">
+                    (c) Малик Эбзеев
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
