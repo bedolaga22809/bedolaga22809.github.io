@@ -18,6 +18,13 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* исправление для адаптивной таблицы */
+.table-responsive {
+    border-radius: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+}
+
 /* кастомизация bootstrap компонентов  */
 .card {
     border: none;
