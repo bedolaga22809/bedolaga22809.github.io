@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости КубГУ</title>
-    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,7 +11,6 @@
 <body>
     <header id="header" class="bg-primary text-white">
         <div class="container">
-            <!-- десктоп: -->
             <div class="d-none d-md-flex align-items-center justify-content-between py-2">
                 <div>
                     <ul class="nav">
@@ -42,9 +40,7 @@
                 </div>
             </div>
             
-            <!-- мобильная: -->
             <div class="d-md-none py-2">
-
                 <div class="d-flex flex-column align-items-center mb-2">
                     <img src="img/whitelogo.png" alt="Логотип КубГУ" class="logo mb-1" style="height: 40px;">
                     <div class="site-name fw-bold text-center" style="white-space: nowrap; font-size: 14px;">КУБАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ</div>
@@ -78,7 +74,6 @@
             </div>
         </div>
 
-        <!-- с применением mobile first -->
         <div class="row">
             <section id="table" class="col-12 order-1 order-md-2 mb-4">
                 <div class="card shadow-sm">
@@ -138,7 +133,6 @@
                         <h2 class="card-title h4 mb-3">Список гиперссылок</h2>
                         
                         <div class="list-group mb-3">
-
                             <a href="http://www.kubsu.ru" class="list-group-item list-group-item-action" target="_blank" title="Главная страница КубГУ (в http)">
                                 Абсолютная гиперссылка на главную страницу сайта КубГУ (http)
                             </a>
@@ -215,11 +209,9 @@
                             </a>
                         </div>
 
-                        <!-- соцсети с font awesome -->
                         <div class="mb-3">
                             <h5 class="fw-bold mb-3">Соц.сети Кубанского Государственного Университета:</h5>
                             <div class="d-flex justify-content-center gap-3 flex-wrap">
-
                                 <a href="https://t.me/kubsunews" target="_blank" class="btn btn-outline-primary d-flex flex-column align-items-center p-3 social-btn" title="Телеграм">
                                     <i class="fab fa-telegram fa-2x mb-2"></i>
                                     <span class="small">Телеграм</span>
@@ -240,7 +232,6 @@
                 </div>
             </section>
 
-            <!-- форма -->
             <section id="form" class="col-12 order-3 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
@@ -248,7 +239,6 @@
                         <p class="mb-3">Заполните форму ниже:</p>
                         
                         <form action="https://formspree.io/f/mayknzjw" method="POST" class="row g-3">
-
                             <div class="col-12">
                                 <label for="fname" class="form-label">ФИО:</label>
                                 <input type="text" class="form-control" id="fname" name="fname" placeholder="Введите ваше ФИО" required>
@@ -316,13 +306,44 @@
                                 <button type="submit" class="btn btn-primary">Сохранить</button>
                             </div>
                         </form>
+
+                        <div class="mt-5 pt-4 border-top">
+                            <h3 class="h5 mb-3">Калькулятор стоимости заказа</h3>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-4">
+                                    <label for="productQuantity" class="form-label">Количество товара:</label>
+                                    <input type="text" class="form-control" id="productQuantity" placeholder="Введите количество">
+                                    <div class="form-text text-danger" id="quantityError" style="display: none;">
+                                        Пожалуйста, введите целое положительное число
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-4">
+                                    <label for="productSelect" class="form-label">Выберите товар:</label>
+                                    <select class="form-select" id="productSelect">
+                                        <option value="1500">Учебник по программированию - 1500 руб.</option>
+                                        <option value="2500">Ноутбук для учебы - 2500 руб.</option>
+                                        <option value="800">Набор канцелярии - 800 руб.</option>
+                                        <option value="1200">Абонемент в библиотеку - 1200 руб.</option>
+                                        <option value="3000">Курс онлайн-лекций - 3000 руб.</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 col-md-4 d-flex align-items-end">
+                                    <button type="button" class="btn btn-success w-100" id="calculateBtn">Рассчитать стоимость</button>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="alert alert-info mt-3" id="result" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- footer -->
     <footer id="footer" class="bg-primary text-white py-3 mt-4">
         <div class="container">
             <div class="row">
@@ -333,7 +354,7 @@
         </div>
     </footer>
 
-    <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="calculator.js" defer></script>
 </body>
 </html>
