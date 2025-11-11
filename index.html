@@ -308,63 +308,59 @@
                         </form>
 
                         <div class="mt-5 pt-4 border-top">
-                            <h3 class="h5 mb-3">Калькулятор стоимости услуг</h3>
-                            
+                            <h3 class="h5 mb-3">Калькулятор стоимости услуги</h3>
                             <div class="row g-3">
+                                
                                 <div class="col-12">
-                                    <label class="form-label">Тип услуги:</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="serviceType" id="serviceType1" value="service1" checked>
-                                        <label class="form-check-label" for="serviceType1">
-                                            Консультация (1000 руб.)
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="serviceType" id="serviceType2" value="service2">
-                                        <label class="form-check-label" for="serviceType2">
-                                            Разработка сайта (15000 руб.)
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="serviceType" id="serviceType3" value="service3">
-                                        <label class="form-check-label" for="serviceType3">
-                                            Техническая поддержка (5000 руб.)
-                                        </label>
+                                    <label class="form-label fw-bold">Выберите тип услуги:</label>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="serviceType" id="serviceType1" value="type1">
+                                            <label class="form-check-label" for="serviceType1">
+                                                Репетитор КубГУ (1000 руб.)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="serviceType" id="serviceType2" value="type2">
+                                            <label class="form-check-label" for="serviceType2">
+                                                Репетитор КубГУ (с опциями) (1500 руб.)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="serviceType" id="serviceType3" value="type3">
+                                            <label class="form-check-label" for="serviceType3">
+                                                Репетитор КубГУ (2000 руб.)
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                        
-                                <div class="col-12 col-md-6" id="serviceOptionsContainer" style="display: none;">
-                                    <label for="serviceOptions" class="form-label">Опции разработки:</label>
-                                    <select class="form-select" id="serviceOptions">
-                                        <!-- Опции будут заполняться динамически -->
+
+                                <div class="col-12 col-md-4">
+                                    <label for="productQuantity" class="form-label">Количество:</label>
+                                    <input type="text" class="form-control" id="productQuantity" placeholder="Введите количество">
+                                    <div class="form-text text-danger" id="quantityError" style="display: none;">
+                                        Пожалуйста, введите целое положительное число
+                                    </div>
+                                </div>
+  
+                                <div class="col-12 col-md-4" id="optionsContainer" style="display: none;">
+                                    <label for="optionsSelect" class="form-label">Выберите опцию:</label>
+                                    <select class="form-select" id="optionsSelect">
                                     </select>
                                 </div>
-                        
-                                <div class="col-12 col-md-6" id="servicePropertiesContainer" style="display: none;">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="serviceProperty">
-                                        <label class="form-check-label" for="serviceProperty">
-                                            Срочный заказ (+2000 руб.)
+
+                                <div class="col-12 col-md-4" id="propertyContainer" style="display: none;">
+                                    <label class="form-label d-block">Дополнительное свойство:</label>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="propertyCheckbox">
+                                        <label class="form-check-label" for="propertyCheckbox">
+                                            Бонусные часы (+400 руб.)
                                         </label>
                                     </div>
                                 </div>
-                        
-                                <div class="col-12 col-md-6">
-                                    <label for="serviceQuantity" class="form-label">Количество:</label>
-                                    <input type="number" class="form-control" id="serviceQuantity" value="1" min="1">
-                                </div>
-                        
-                                <div class="col-12 col-md-6 d-flex align-items-end">
-                                    <button type="button" class="btn btn-success w-100" id="calculateServiceBtn">
-                                        Рассчитать стоимость
-                                    </button>
-                                </div>
-                        
+                          
                                 <div class="col-12">
-                                    <div class="alert alert-success mt-3">
-                                        <strong>Итоговая стоимость: </strong>
-                                        <span id="servicePrice">0 руб.</span>
-                                    </div>
+                                    <div class="alert alert-info mt-3" id="result" style="display: none;"></div>
                                 </div>
                             </div>
                         </div>
