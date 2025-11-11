@@ -34,7 +34,7 @@ function initGallery() {
         dots.forEach(dot => {
             dot.classList.remove('active');
         });
-        
+
         if (index >= totalSlides) {
             currentSlide = 0;
         } else if (index < 0) {
@@ -106,14 +106,12 @@ function initGallery() {
         
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
-
                 nextSlide();
             } else {
-
                 prevSlide();
             }
         }
     }
-    
+
     showSlide(0);
 }
